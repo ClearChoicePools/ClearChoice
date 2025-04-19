@@ -21,24 +21,38 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
+import logo from "next/image";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Hero Section */}
-      <div
-        className="relative h-[600px] bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/pool.jpeg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-blue-900/40" />
+      <div className="relative h-[600px]">
+        <Image
+          src="/images/sunset.png"
+          alt="Sunset pool background"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-gray-800/40" />
+        <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-20">
+          <Image
+            src="/images/logo.png"
+            alt="Clear Choice Pool Service Logo"
+            width={200}
+            height={80}
+            className="object-contain"
+            priority
+          />
+        </div>
         <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl">
-            <h1 className="text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
               Clear Choice Pools
             </h1>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8">
               Professional pool maintenance and cleaning services to keep your
               pool clean and sanitized all year round.
             </p>
@@ -46,17 +60,13 @@ export default function Home() {
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                 <a href="#contact">Get Free Quote</a>
               </Button>
-              <a
-                href="#services"
-                className="px-6 py-3 bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white/20 transition-colors"
-              >
-                Our Services
-              </a>
+              <Button size="lg" className="bg-blue-900 hover:bg-blue-950">
+                <a href="#services">Our Services</a>
+              </Button>
             </div>
           </div>
         </div>
       </div>
-
       {/* Services Section */}
       <div id="services" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -99,7 +109,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* Why Choose Us Section */}
       <div className="py-24 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4">
@@ -138,7 +147,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* Contact Section */}
       <div className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -174,7 +182,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4">
